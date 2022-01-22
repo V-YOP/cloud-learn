@@ -23,8 +23,9 @@ public class OrderController {
     }
 
     // 权宜之策，真正使用微服务的时候肯定使用服务注册和服务发现框架来获取具体信息
-    // 这时目标的地址就类似"lb://payment_service"了
-    private final String PAYMENT_URL = "http://localhost:8001";
+    // 这时目标的地址就类似"lb://payment-service"了
+    // --- 更新，使用Eureka默认的Ribbon作为负载均衡器，形式为http://<service-name>/<path>
+    private final String PAYMENT_URL = "http://cloud-payment-service";
 
     @PostMapping("/create")
     public CommonResult<Void> create(@RequestBody Payment payment) {

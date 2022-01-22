@@ -3,7 +3,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:h2:mem:testdb
+    url: jdbc:h2:file:~/tmp/test_db;DB_CLOSE_ON_EXIT=FALSE;AUTO_RECONNECT=TRUE;DB_CLOSE_DELAY=-1
     driver-class-name: org.h2.Driver
     username: sa
     password: password
@@ -11,5 +11,12 @@ spring:
   h2:
     console:
       enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+
   application:
-    name: cloud-payment-service
+    name: cloud-order-service
+
+  profiles:
+    active: eureka
+

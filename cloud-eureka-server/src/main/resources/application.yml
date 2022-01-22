@@ -1,0 +1,18 @@
+# server.port通过idea配置给定
+#server:
+#  port: 8761
+spring:
+  application:
+    name: eureka-server
+# 该配置为单体（Standalone）eureka的配置
+# 配置来自于 https://cloud.spring.io/spring-cloud-netflix/multi/multi_spring-cloud-eureka-server.html#spring-cloud-eureka-server-standalone-mode
+eureka:
+# hostname交由idea配置。全部使用localhost好像会让eureka不运行在集群模式下
+#  instance:
+#    hostname: localhost1
+  client:
+    registerWithEureka: true # 单体情况下不需要注册自己（不然注册给谁？），非单体情况下应为默认值true
+    fetchRegistry: true # 单体情况下可以不需要eureka注册信息（不然找谁要？），非单体情况下应为默认值true
+    serviceUrl:
+      # 考虑到这里使用集群模式，直接硬编码了
+      defaultZone: http://localhost1:8761/eureka/, http://localhost2:8762/eureka/, http://localhost3:8763/eureka/

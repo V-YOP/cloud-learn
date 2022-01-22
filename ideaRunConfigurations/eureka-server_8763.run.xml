@@ -1,0 +1,29 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="eureka-server:8763" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <module name="cloud-eureka-server" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="me.yuuki.springcloud.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <option name="SPRING_BOOT_MAIN_CLASS" value="me.yuuki.springcloud.EurekaServerApplication" />
+    <option name="ALTERNATIVE_JRE_PATH" />
+    <option name="SHORTEN_COMMAND_LINE" value="NONE" />
+    <additionalParameters>
+      <param>
+        <option name="enabled" value="true" />
+        <option name="name" value="server.port" />
+        <option name="value" value="8763" />
+      </param>
+      <param>
+        <option name="enabled" value="true" />
+        <option name="name" value="eureka.instance.hostname" />
+        <option name="value" value="localhost3" />
+      </param>
+    </additionalParameters>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

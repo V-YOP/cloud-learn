@@ -17,6 +17,11 @@
 </properties>
 
 <dependencies>
+  <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-devtools</artifactId>
+    <optional>true</optional>
+  </dependency>
   <!-- 互相引用的时候对版本号指定的最佳实践是什么？ -->
   <dependency>
     <groupId>me.yuuki</groupId>
@@ -30,6 +35,10 @@
   <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-actuator</artifactId>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
   </dependency>
 <!--  <dependency>
     <groupId>com.alibaba</groupId>

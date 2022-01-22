@@ -1,0 +1,15 @@
+server:
+  port: 8001
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+    type: com.alibaba.druid.pool.DruidDataSource
+  h2:
+    console:
+      enabled: true
+  application:
+    name: cloud-payment-service

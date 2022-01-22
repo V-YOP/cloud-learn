@@ -1,7 +1,7 @@
 package me.yuuki.provider.payment.service;
 
+import me.yuuki.entity.Payment;
 import me.yuuki.provider.payment.dao.PaymentDao;
-import me.yuuki.provider.payment.entity.Payment;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;

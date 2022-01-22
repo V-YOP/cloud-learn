@@ -1,6 +1,7 @@
 package me.yuuki.provider.payment.service;
 
-import me.yuuki.provider.payment.entity.Payment;
+
+import me.yuuki.entity.Payment;
 
 import java.util.Optional;
 

@@ -1,11 +1,14 @@
-package me.yuuki.provider.payment.controller;
+package me.yuuki.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class CommonResult<T> {
     private Integer code;
     private String message;
@@ -14,9 +17,9 @@ public class CommonResult<T> {
         return new CommonResult<>(code, message, null);
     }
     public static <T> CommonResult<T> success(T t) {
-        return new CommonResult<>(200, "success", null);
+        return new CommonResult<>(200, "success", t);
     }
     public static <T> CommonResult<T> success(String message, T t) {
-        return new CommonResult<>(200, message, null);
+        return new CommonResult<>(200, message, t);
     }
 }

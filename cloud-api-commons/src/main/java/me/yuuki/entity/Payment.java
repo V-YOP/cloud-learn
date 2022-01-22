@@ -1,7 +1,5 @@
-package me.yuuki.provider.payment.entity;
+package me.yuuki.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 
 @Data

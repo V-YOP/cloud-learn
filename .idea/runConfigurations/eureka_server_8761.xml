@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="eureka-server:8761" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+  <configuration default="false" name="eureka-server:8761" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="eureka-server">
     <module name="cloud-eureka-server" />
     <extension name="coverage">
       <pattern>

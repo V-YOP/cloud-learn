@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    zookeeper:
+      discovery:
+        enabled: true
+      # 需要在hosts中配置 127.0.0.1 zoo1 zoo2 zoo3
+      connect-string: zoo1:2181,zoo2:2182,zoo3:2183
+    # 好像zookeeper只负责服务注册，要负载均衡还得结合ribbon
+    loadbalancer:
+      ribbon:
+        enabled: true

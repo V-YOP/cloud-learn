@@ -1,5 +1,12 @@
-# eureka客户端配置，client默认是enabled的，不需要显式地加注解
+# eureka客户端配置，client默认是enabled的，这里要覆盖基本profile中的配置
 eureka:
   client:
     service-url:
       defaultZone: http://localhost1:8761/eureka/, http://localhost2:8762/eureka/, http://localhost3:8763/eureka/
+    enabled: true
+
+spring:
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: true

@@ -3,8 +3,8 @@ spring:
     zookeeper:
       discovery:
         enabled: true
-      # 需要在hosts中配置 127.0.0.1 zoo1 zoo2 zoo3
-      connect-string: zoo1:2181,zoo2:2182,zoo3:2183
-    loadbalancer:
-      ribbon:
-        enabled: true
+      connect-string: zoo1:2181,zoo2:2181,zoo3:2181
+
+  # 同时导入Eureka和Zookeeper的时候，好像会出一些篓子
+  autoconfigure:
+    exclude: org.springframework.cloud.netflix.eureka.loadbalancer.LoadBalancerEurekaAutoConfiguration

@@ -1,6 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="provider-payment:8002" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
     <module name="provider-payment" />
+    <target name="provider-payment-context" />
     <extension name="coverage">
       <pattern>
         <option name="PATTERN" value="me.yuuki.provider.payment.*" />

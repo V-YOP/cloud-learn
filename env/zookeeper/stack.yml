@@ -1,14 +1,18 @@
+# 需创建名为my_network的网络，一切配置按默认即可
 # docker-compose -f stack.yml up -d
-# mac上的docker特别尴尬，指定container的地址后却无法通过IP进行访问…只能采取端口映射的方式
 version: '3.1'
+
+networks:
+  my_network:
+    external: true
 
 services:
   zoo1:
     image: zookeeper:3.5.9
     restart: always
     hostname: zoo1
-    ports:
-      - 2181:2181
+    networks:
+      - my_network
     environment:
       ZOO_MY_ID: 1
       ZOO_SERVERS: server.1=zoo1:2888:3888;2181 server.2=zoo2:2888:3888;2181 server.3=zoo3:2888:3888;2181
@@ -17,8 +21,8 @@ services:
     image: zookeeper:3.5.9
     restart: always
     hostname: zoo2
-    ports:
-      - 2182:2181
+    networks:
+      - my_network
     environment:
       ZOO_MY_ID: 2
       ZOO_SERVERS: server.1=zoo1:2888:3888;2181 server.2=zoo2:2888:3888;2181 server.3=zoo3:2888:3888;2181
@@ -27,8 +31,8 @@ services:
     image: zookeeper:3.5.9
     restart: always
     hostname: zoo3
-    ports:
-      - 2183:2181
+    networks:
+      - my_network
     environment:
       ZOO_MY_ID: 3
       ZOO_SERVERS: server.1=zoo1:2888:3888;2181 server.2=zoo2:2888:3888;2181 server.3=zoo3:2888:3888;2181

@@ -4,6 +4,7 @@ eureka:
     service-url:
       defaultZone: http://localhost1:8761/eureka/, http://localhost2:8762/eureka/, http://localhost3:8763/eureka/
     register-with-eureka: true # 微服务的消费者可以不把自己注册进eureka，因为它不需要被其它微服务发现……大概吧？
+    enabled: true
 
 spring:
   cloud:

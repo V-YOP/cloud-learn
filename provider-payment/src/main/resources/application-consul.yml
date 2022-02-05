@@ -6,7 +6,3 @@ spring:
       host: 172.19.1.4
       port: 8500
       enabled: true
-
-  # 排除eureka
-  autoconfigure:
-    exclude: org.springframework.cloud.netflix.eureka.loadbalancer.LoadBalancerEurekaAutoConfiguration

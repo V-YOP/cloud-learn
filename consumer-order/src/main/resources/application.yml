@@ -35,4 +35,4 @@ spring:
       enabled: false
 
   profiles:
-    active: consul
+    active: eureka

@@ -1,7 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="consumer-order:80" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
     <module name="consumer-order" />
-    <target name="consumer-order-singleton" />
     <extension name="coverage">
       <pattern>
         <option name="PATTERN" value="me.yuuki.comsumer.order.*" />

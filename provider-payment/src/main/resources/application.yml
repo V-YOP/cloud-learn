@@ -29,8 +29,9 @@ spring:
       ribbon:
         enabled: false
     zookeeper:
-      discovery:
-        enabled: false
+      enabled: false
+    consul:
+      enabled: false
 
   profiles:
-    active: zookeeper
+    active: consul

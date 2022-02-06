@@ -17,9 +17,11 @@ import org.springframework.web.client.RestTemplate;
 public class OrderController {
     private static final Logger logger = LoggerFactory.getLogger(OrderController.class);
     private final RestTemplate restTemplate;
+    private final PaymentFeignService paymentFeignService;
 
-    public OrderController(RestTemplate restTemplate) {
+    public OrderController(RestTemplate restTemplate, PaymentFeignService paymentFeignService) {
         this.restTemplate = restTemplate;
+        this.paymentFeignService = paymentFeignService;
     }
 
     // 权宜之策，真正使用微服务的时候肯定使用服务注册和服务发现框架来获取具体信息
@@ -59,5 +61,14 @@ public class OrderController {
         return CommonResult.empty(res == null ? 500 : res.getStatusCodeValue(), "请求失败");
     }
 
+    /* 使用OpenFeign的接口 */
+    @PostMapping("/feign/create")
+    public CommonResult<Void> feignCreate(@RequestBody Payment payment) {
+        return paymentFeignService.create(payment);
+    }
+    @GetMapping("/feign/{id}")
+    public CommonResult<Payment> feignGetPayment(@PathVariable String id) {
+        return paymentFeignService.getPayment(id);
+    }
 
 }
